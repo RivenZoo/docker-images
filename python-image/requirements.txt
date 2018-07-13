@@ -1,3 +1,4 @@
+-i https://mirrors.ustc.edu.cn/pypi/web/simple
 jieba==0.39
 bs4==0.0.1
 lxml==4.2.3
