@@ -1,0 +1,5 @@
+jieba==0.39
+bs4==0.0.1
+lxml==4.2.3
+flask==1.0.2
+gunicorn==19.9.0
