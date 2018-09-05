@@ -2,6 +2,12 @@
 
 APP_POSTGRES = postgresdb
 
+function usage {
+	echo "postgres.sh server [port] [password]"
+	echo "postgres.sh psql [user] [dbname] [port]"
+	echo "default: port=5432 user=postgres dbname=postgres password=king+5688"
+}
+
 function run_psql {
 	user=$1
 	dbname=$2
@@ -19,6 +25,8 @@ function run_psql {
 }
 
 function run_postgres {
+	port=$1
+	password=$2
 	if [[ -z "${port}" ]]; then
 		port=5432
 	fi
@@ -29,6 +37,6 @@ function run_postgres {
 }
 
 case $1 in
-	-server) shift; run_postgres $*;;
-	-psql=*) shift; run_psql $*;;
+	server) shift; run_postgres $*;;
+	psql) shift; run_psql $*;;
 esac
