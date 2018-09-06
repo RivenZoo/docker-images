@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_POSTGRES = postgresdb
+APP_POSTGRES=postgresdb
 
 function usage {
 	echo "postgres.sh server [port] [password]"
