@@ -28,7 +28,7 @@ function run_redis_server {
 		data_dir=/tmp/redis
 		mkdir -p ${data_dir}
 	fi
-	docker run --name ${APP_REDIS} -d redis redis-server --appendonly yes -v ${data_dir}:/data
+	docker run --name ${APP_REDIS} -v ${data_dir}:/data -d redis redis-server --appendonly yes
 }
 
 case $1 in
