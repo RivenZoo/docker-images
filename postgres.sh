@@ -5,7 +5,7 @@ APP_POSTGRES=postgresdb
 function usage {
 	echo "postgres.sh server [port] [password]"
 	echo "postgres.sh psql [user] [dbname] [port]"
-	echo "default: port=5432 user=postgres dbname=postgres password=king+5688"
+	echo "default: port=5432 user=postgres dbname=postgres password=postgres"
 }
 
 function run_psql {
@@ -31,7 +31,7 @@ function run_postgres {
 		port=5432
 	fi
 	if [[ -z "${password}" ]]; then
-		password=king+5688
+		password=postgres
 	fi
 	docker run --name ${APP_POSTGRES} -p 5432:${port} -e POSTGRES_PASSWORD=${password} -d postgres 
 }
