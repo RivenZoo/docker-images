@@ -11,6 +11,8 @@ cd /tmp/nginx-1.15.5 && ./configure --add-module=../ngx_http_qrcode_module/ && m
 apk del build-base autoconf automake pkgconfig && \
 rm -rf /tmp/* && rm -rf /var/cache/apk/*
 
+RUN apk update && apk add tzdata && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 
 EXPOSE 8080
