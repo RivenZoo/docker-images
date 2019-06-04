@@ -11,9 +11,11 @@ services:
     ports:
       - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 10.12.129.115
+      HOST_IP: 10.12.129.45
+      KAFKA_ADVERTISED_HOST_NAME: 10.12.129.45
       KAFKA_CREATE_TOPICS: "biglineringest"
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
