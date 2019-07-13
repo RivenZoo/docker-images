@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  scipy-notebook:
+    build:
+      context: .
+    ports:
+      - "18888:8888"
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      GRANT_SUDO: "yes"
+    volumes:
+      - /home/zrw/workspace/jupyter-notebook:/home/jovyan/work
+    restart: always
+
