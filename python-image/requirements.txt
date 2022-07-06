@@ -1,6 +1,6 @@
 -i https://mirrors.ustc.edu.cn/pypi/web/simple
 jieba==0.39
 bs4==0.0.1
-lxml==4.2.3
+lxml==4.9.1
 flask==1.0.2
 gunicorn==19.9.0
